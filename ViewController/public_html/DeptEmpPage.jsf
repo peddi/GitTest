@@ -58,7 +58,7 @@
                                     </af:column>
                                     <af:column sortProperty="#{bindings.EmployeesVO3.hints.Email.name}"
                                                filterable="true" sortable="true"
-                                               headerText="#{bindings.EmployeesVO3.hints.Email.label}" id="c4">
+                                               headerText="EMail" id="c4">
                                         <af:outputText value="#{row.Email}"
                                                        shortDesc="#{bindings.EmployeesVO3.hints.Email.tooltip}"
                                                        id="ot8"/>
