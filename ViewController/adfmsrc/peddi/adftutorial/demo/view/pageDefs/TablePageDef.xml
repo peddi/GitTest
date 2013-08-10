@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="TablePageDef"
+                Package="peddi.adftutorial.demo.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="EmpDetailsVO1" RangeSize="25" DataControl="HRSystemAMDataControl" id="EmpDetailsVO1Iterator"
+              ChangeEventPolicy="ppr"/>
+    <searchRegion Binds="EmpDetailsVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="EmpDetailsVO1Query"/>
+    <iterator Binds="DepartmentsVO1" RangeSize="25" DataControl="HRSystemAMDataControl" id="DepartmentsVO1Iterator"/>
+    <searchRegion Binds="DepartmentsVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="DepartmentsVO1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="EmpDetailsVO1Iterator" id="EmpDetailsVO1">
+      <nodeDefinition DefName="peddi.adftutorial.demo.model.view.EmpDetailsVO" Name="EmpDetailsVO10">
+        <AttrNames>
+          <Item Value="EmployeeId"/>
+          <Item Value="FirstName"/>
+          <Item Value="LastName"/>
+          <Item Value="Email"/>
+          <Item Value="HireDate"/>
+          <Item Value="Salary"/>
+          <Item Value="JobId"/>
+          <Item Value="DepartmentId"/>
+          <Item Value="DepartmentName"/>
+          <Item Value="AnnualSalary"/>
+          <Item Value="FullName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="DepartmentsVO1Iterator" id="DepartmentId">
+      <AttrNames>
+        <Item Value="DepartmentId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DepartmentsVO1Iterator" id="DepartmentName">
+      <AttrNames>
+        <Item Value="DepartmentName"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="DepartmentsVO1Iterator" id="DepartmentsVO1">
+      <nodeDefinition DefName="peddi.adftutorial.demo.model.view.DepartmentsVO" Name="DepartmentsVO10">
+        <AttrNames>
+          <Item Value="DepartmentId"/>
+          <Item Value="DepartmentName"/>
+          <Item Value="ManagerId"/>
+          <Item Value="LocationId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="EmpDetailsVO1Iterator" id="EmployeeId">
+      <AttrNames>
+        <Item Value="EmployeeId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmpDetailsVO1Iterator" id="FirstName">
+      <AttrNames>
+        <Item Value="FirstName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmpDetailsVO1Iterator" id="LastName">
+      <AttrNames>
+        <Item Value="LastName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmpDetailsVO1Iterator" id="Email">
+      <AttrNames>
+        <Item Value="Email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmpDetailsVO1Iterator" id="HireDate">
+      <AttrNames>
+        <Item Value="HireDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmpDetailsVO1Iterator" id="Salary">
+      <AttrNames>
+        <Item Value="Salary"/>
+      </AttrNames>
+    </attributeValues>
+    <listOfValues StaticList="false" IterBinding="EmpDetailsVO1Iterator" Uses="LOV_JobId" id="JobId"/>
+    <attributeValues IterBinding="EmpDetailsVO1Iterator" id="AnnualSalary">
+      <AttrNames>
+        <Item Value="AnnualSalary"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmpDetailsVO1Iterator" id="FullName">
+      <AttrNames>
+        <Item Value="FullName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmpDetailsVO1Iterator" id="JobId1">
+      <AttrNames>
+        <Item Value="JobId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmpDetailsVO1Iterator" id="DepartmentId1">
+      <AttrNames>
+        <Item Value="DepartmentId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmpDetailsVO1Iterator" id="DepartmentName1">
+      <AttrNames>
+        <Item Value="DepartmentName"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="EmpDetailsVO1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="EmpDetailsVO1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="EmpDetailsVO1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="EmpDetailsVO1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+  </bindings>
+</pageDefinition>

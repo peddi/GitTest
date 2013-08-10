@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="Query2.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelSplitter id="ps1" splitterPosition="818">
+                <f:facet name="first">
+                    <af:panelGroupLayout layout="vertical" id="pgl1">
+                        <af:panelHeader text="EmployeesEO" id="ph1">
+                            <af:quickQuery label="Search" searchDesc="Search" id="qryId1"
+                                           value="#{bindings.ImplicitViewCriteriaQuery.quickQueryDescriptor}"
+                                           model="#{bindings.ImplicitViewCriteriaQuery.queryModel}"
+                                           queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}">
+                                <f:facet name="end">
+                                    <af:commandLink text="Advanced" rendered="false" id="cl1"/>
+                                </f:facet>
+                            </af:quickQuery>
+                            <af:table value="#{bindings.EmpDetailsVO1.collectionModel}" var="row"
+                                      rows="#{bindings.EmpDetailsVO1.rangeSize}"
+                                      emptyText="#{bindings.EmpDetailsVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                      fetchSize="#{bindings.EmpDetailsVO1.rangeSize}" rowBandingInterval="0"
+                                      partialTriggers="::qryId1" id="t1" styleClass="AFAuxiliaryStretchWidth">
+                                <af:column sortProperty="#{bindings.EmpDetailsVO1.hints.EmployeeId.name}"
+                                           sortable="false"
+                                           headerText="#{bindings.EmpDetailsVO1.hints.EmployeeId.label}" id="c1">
+                                    <af:outputText value="#{row.EmployeeId}"
+                                                   shortDesc="#{bindings.EmpDetailsVO1.hints.EmployeeId.tooltip}"
+                                                   id="ot1">
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.EmpDetailsVO1.hints.EmployeeId.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.EmpDetailsVO1.hints.FirstName.name}"
+                                           sortable="false" headerText="#{bindings.EmpDetailsVO1.hints.FirstName.label}"
+                                           id="c2">
+                                    <af:outputText value="#{row.FirstName}"
+                                                   shortDesc="#{bindings.EmpDetailsVO1.hints.FirstName.tooltip}"
+                                                   id="ot2"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.EmpDetailsVO1.hints.LastName.name}" sortable="false"
+                                           headerText="#{bindings.EmpDetailsVO1.hints.LastName.label}" id="c3">
+                                    <af:outputText value="#{row.LastName}"
+                                                   shortDesc="#{bindings.EmpDetailsVO1.hints.LastName.tooltip}"
+                                                   id="ot3"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.EmpDetailsVO1.hints.Email.name}" sortable="false"
+                                           headerText="#{bindings.EmpDetailsVO1.hints.Email.label}" id="c4">
+                                    <af:outputText value="#{row.Email}"
+                                                   shortDesc="#{bindings.EmpDetailsVO1.hints.Email.tooltip}" id="ot4"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.EmpDetailsVO1.hints.HireDate.name}" sortable="false"
+                                           headerText="#{bindings.EmpDetailsVO1.hints.HireDate.label}" id="c5">
+                                    <af:outputText value="#{row.HireDate}"
+                                                   shortDesc="#{bindings.EmpDetailsVO1.hints.HireDate.tooltip}"
+                                                   id="ot5">
+                                        <af:convertDateTime pattern="#{bindings.EmpDetailsVO1.hints.HireDate.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.EmpDetailsVO1.hints.Salary.name}" sortable="false"
+                                           headerText="#{bindings.EmpDetailsVO1.hints.Salary.label}" id="c6">
+                                    <af:outputText value="#{row.Salary}"
+                                                   shortDesc="#{bindings.EmpDetailsVO1.hints.Salary.tooltip}" id="ot6"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.EmpDetailsVO1.hints.JobId.name}" sortable="false"
+                                           headerText="#{bindings.EmpDetailsVO1.hints.JobId.label}" id="c7">
+                                    <af:outputText value="#{row.JobId}"
+                                                   shortDesc="#{bindings.EmpDetailsVO1.hints.JobId.tooltip}" id="ot7"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.EmpDetailsVO1.hints.DepartmentName.name}"
+                                           sortable="false"
+                                           headerText="#{bindings.EmpDetailsVO1.hints.DepartmentName.label}" id="c9">
+                                    <af:outputText value="#{row.DepartmentName}"
+                                                   shortDesc="#{bindings.EmpDetailsVO1.hints.DepartmentName.tooltip}"
+                                                   id="ot9"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.EmpDetailsVO1.hints.AnnualSalary.name}"
+                                           sortable="false"
+                                           headerText="#{bindings.EmpDetailsVO1.hints.AnnualSalary.label}" id="c10">
+                                    <af:outputText value="#{row.AnnualSalary}"
+                                                   shortDesc="#{bindings.EmpDetailsVO1.hints.AnnualSalary.tooltip}"
+                                                   id="ot10">
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.EmpDetailsVO1.hints.AnnualSalary.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.EmpDetailsVO1.hints.FullName.name}" sortable="false"
+                                           headerText="#{bindings.EmpDetailsVO1.hints.FullName.label}" id="c11">
+                                    <af:outputText value="#{row.FullName}"
+                                                   shortDesc="#{bindings.EmpDetailsVO1.hints.FullName.tooltip}"
+                                                   id="ot11"/>
+                                </af:column>
+                            </af:table>
+                        </af:panelHeader>
+                    </af:panelGroupLayout>
+                </f:facet>
+                <f:facet name="second">
+                    <af:treeTable value="#{bindings.EmployeesVO1.treeModel}" var="node"
+                                  selectionListener="#{bindings.EmployeesVO1.treeModel.makeCurrent}"
+                                  rowSelection="single" id="tt1">
+                        <f:facet name="nodeStamp">
+                            <af:column id="c8">
+                                <af:outputText value="#{node}" id="ot8"/>
+                            </af:column>
+                        </f:facet>
+                        <f:facet name="pathStamp">
+                            <af:outputText value="#{node}" id="ot12"/>
+                        </f:facet>
+                    </af:treeTable>
+                </f:facet>
+            </af:panelSplitter>
+        </af:form>
+    </af:document>
+</f:view>

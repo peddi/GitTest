@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="untitled2PageDef"
+                Package="peddi.adftutorial.demo.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="EmloyeesVOViewCriteria1" RangeSize="25" DataControl="HRSystemAMDataControl"
+              id="EmloyeesVOViewCriteria1Iterator"/>
+    <searchRegion Criteria="EmployeesDeptNSalry"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="EmloyeesVOViewCriteria1Iterator" id="EmloyeesVOViewCriteriaCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="EmloyeesVOViewCriteria1Iterator" id="EmloyeesVOViewCriteria1">
+      <nodeDefinition DefName="peddi.adftutorial.demo.model.view.EmloyeesVOViewCriteria"
+                      Name="EmloyeesVOViewCriteria10">
+        <AttrNames>
+          <Item Value="EmployeeId"/>
+          <Item Value="FirstName"/>
+          <Item Value="LastName"/>
+          <Item Value="Email"/>
+          <Item Value="PhoneNumber"/>
+          <Item Value="HireDate"/>
+          <Item Value="JobId"/>
+          <Item Value="Salary"/>
+          <Item Value="CommissionPct"/>
+          <Item Value="ManagerId"/>
+          <Item Value="DepartmentId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="AllBeansPageDef"
+                Package="peddi.adftutorial.demo.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variable Name="selectedValuesVar" Type="java.util.HashMap"/>
+    </variableIterator>
+    <iterator Binds="EmpDetailsVO1" RangeSize="25" DataControl="HRSystemAMDataControl" id="EmpDetailsVO1Iterator"
+              ChangeEventPolicy="ppr"/>
+    <iterator Binds="CheckNListVO1" RangeSize="25" DataControl="HRSystemAMDataControl" id="CheckNListVO1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="EmpDetailsVO1Iterator" id="FirstName">
+      <AttrNames>
+        <Item Value="FirstName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmpDetailsVO1Iterator" id="LastName">
+      <AttrNames>
+        <Item Value="LastName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmpDetailsVO1Iterator" id="Email">
+      <AttrNames>
+        <Item Value="Email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmpDetailsVO1Iterator" id="HireDate">
+      <AttrNames>
+        <Item Value="HireDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmpDetailsVO1Iterator" id="Salary">
+      <AttrNames>
+        <Item Value="Salary"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="EmpDetailsVO1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="EmpDetailsVO1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="EmpDetailsVO1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="EmpDetailsVO1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <attributeValues IterBinding="CheckNListVO1Iterator" id="SelectOneChoice">
+      <AttrNames>
+        <Item Value="SelectOneChoice"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CheckNListVO1Iterator" id="SelectManyChoice">
+      <AttrNames>
+        <Item Value="SelectManyChoice"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CheckNListVO1Iterator" id="SelectBoolChkBox">
+      <AttrNames>
+        <Item Value="SelectBoolChkBox"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CheckNListVO1Iterator" id="SelectManyChkBox">
+      <AttrNames>
+        <Item Value="SelectManyChkBox"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CheckNListVO1Iterator" id="SelectOneListBox">
+      <AttrNames>
+        <Item Value="SelectOneListBox"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CheckNListVO1Iterator" id="SelectManyListBox">
+      <AttrNames>
+        <Item Value="SelectManyListBox"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CheckNListVO1Iterator" id="SelectOneRadio">
+      <AttrNames>
+        <Item Value="SelectOneRadio"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CheckNListVO1Iterator" id="SelectBoolRadio">
+      <AttrNames>
+        <Item Value="SelectBoolRadio"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="populateCheckNListVO1" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="populateCheckNListVO1" IsViewObjectMethod="false" DataControl="HRSystemAMDataControl"
+                  InstanceName="data.HRSystemAMDataControl.dataProvider">
+      <NamedData NDName="selectedValues" NDValue="#{bindings.selectedValuesVar}" NDType="java.util.HashMap"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>

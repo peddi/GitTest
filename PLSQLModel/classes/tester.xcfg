@@ -1,0 +1,11 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="peddi.plsql.model.PLSQLAppModule">
+      <AppModuleConfig name="13FC5454A63" DBconnection="java:comp/env/jdbc/XE_HRDS" ApplicationName="peddi.plsql.model.PLSQLAppModule" DeployPlatform="LOCAL" IsLazyLoadingTrue="true" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory" JDBCName="XE_HR" BC4JConfigName="PLSQLAppModuleLocal" jbo.project="peddi.plsql.model.PLSQLModel">
+         <Database jbo.locking.mode="optimistic" jbo.TypeMapEntries="OracleApps" jbo.SQLBuilder="Oracle"/>
+         <Security AppModuleJndiName="peddi.plsql.model.PLSQLAppModule"/>
+         <Tester FullProxyInterfaceName="peddi.plsql.model.common.PLSQLAppModule"/>
+         <Custom LastUsedConfiguration="PLSQLAppModuleLocal" JDBCDataSource="java:comp/env/jdbc/XE_HRDS"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

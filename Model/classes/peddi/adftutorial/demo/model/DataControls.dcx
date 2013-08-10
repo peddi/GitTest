@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<DataControlConfigs xmlns="http://xmlns.oracle.com/adfm/configuration" version="11.1.2.64.36" id="DataControls"
+                    Package="peddi.adftutorial.demo.model">
+  <AdapterDataControl id="AMServiceTest" FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.adf.model.adapter.bean.BeanDCDefinition" SupportsTransactions="true"
+                      SupportsSortCollection="true" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true"
+                      Definition="peddi.adftutorial.demo.model.service.AMServiceTest"
+                      BeanClass="peddi.adftutorial.demo.model.service.AMServiceTest"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <CreatableTypes>
+      <TypeInfo FullName="peddi.adftutorial.demo.model.service.AMServiceTest"/>
+    </CreatableTypes>
+    <Source>
+      <bean-definition BeanClass="peddi.adftutorial.demo.model.service.AMServiceTest"
+                       xmlns="http://xmlns.oracle.com/adfm/adapter/bean"/>
+    </Source>
+  </AdapterDataControl>
+</DataControlConfigs>

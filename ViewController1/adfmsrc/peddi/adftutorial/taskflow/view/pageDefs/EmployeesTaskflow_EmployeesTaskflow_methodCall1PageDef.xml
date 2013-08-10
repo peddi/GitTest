@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36"
+                id="EmployeesTaskflow_EmployeesTaskflow_methodCall1PageDef"
+                Package="peddi.adftutorial.taskflow.view.pageDefs" SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="EmployeesVO3" RangeSize="25" DataControl="HRSystemAMDataControl" id="EmployeesVO3Iterator"
+              Refresh="never"/>
+  </executables>
+  <bindings>
+    <action IterBinding="EmployeesVO3Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <af:document title="PanelDashboard.jsf" id="d1">
+    <af:messages id="m1"/>
+    <af:form id="f1">
+      <af:panelStretchLayout id="psl1">
+        <f:facet name="bottom">
+          <af:commandButton text="commandButton 1" id="cb1" actionListener="#{PanelDashBoardBean.insertPanelBox}">
+            <af:panelDashboardBehavior for="pd1"/>
+          </af:commandButton>
+        </f:facet>
+        <f:facet name="center">
+          <af:panelDashboard id="pd1" rowHeight="250px">
+            <af:panelBox text="PanelBox1" id="pb1" background="dark">
+              <f:facet name="toolbar"/>
+              <af:componentDragSource/>
+              <af:toolbar id="t1">
+                <af:commandToolbarButton text="commandToolbarButton 1" id="ctb1"/>
+                <af:commandToolbarButton text="commandToolbarButton 2" id="ctb2"/>
+              </af:toolbar>
+            </af:panelBox>
+            <af:panelBox text="PanelBox2" id="pb2" background="dark">
+              <f:facet name="toolbar"/>
+              <af:componentDragSource/>
+              <af:toolbox id="t2" inlineStyle="Width:100px">
+                <af:commandToolbarButton text="ToolBox Button1" id="ctb3" windowHeight="10" windowWidth="30"
+                                         inlineStyle="Height:20px;Width:100px;Color:Red"/>
+                <af:commandToolbarButton text="ToolBox Button2" id="ctb4" inlineStyle="Height:20px;Width:100px"/>
+                <af:inputText value="#{bindings.DepartmentName.inputValue}" simple="true"
+                              required="#{bindings.DepartmentName.hints.mandatory}"
+                              columns="#{bindings.DepartmentName.hints.displayWidth}"
+                              maximumLength="#{bindings.DepartmentName.hints.precision}"
+                              shortDesc="#{bindings.DepartmentName.hints.tooltip}" id="it1">
+                  <f:validator binding="#{bindings.DepartmentName.validator}"/>
+                </af:inputText>
+              </af:toolbox>
+            </af:panelBox>
+            <af:panelBox text="PanelBox3" id="pb3" background="dark">
+              <f:facet name="toolbar"/>
+              <af:componentDragSource/>
+            </af:panelBox>
+            <af:panelBox text="PanelBox4" id="pb4" background="medium">
+              <f:facet name="toolbar"/>
+              <af:componentDragSource/>
+            </af:panelBox>
+            <af:panelBox text="PanelBox5" id="pb5" background="medium">
+              <f:facet name="toolbar"/>
+              <af:componentDragSource/>
+            </af:panelBox>
+            <af:panelBox text="PanelBox6" id="pb6" background="medium">
+              <f:facet name="toolbar"/>
+              <af:componentDragSource/>
+            </af:panelBox>
+            <af:panelBox text="PanelBox7" id="pb7" background="light">
+              <f:facet name="toolbar"/>
+              <af:componentDragSource/>
+            </af:panelBox>
+            <af:panelBox text="PanelBox8" id="pb8" background="light">
+              <f:facet name="toolbar"/>
+              <af:componentDragSource/>
+            </af:panelBox>
+            <af:panelBox text="PanelBox9" id="pb9" background="light" showDisclosure="false">
+              <f:facet name="toolbar"/>
+              <af:componentDragSource/>
+            </af:panelBox>
+          </af:panelDashboard>
+        </f:facet>
+        <f:facet name="start"/>
+        <f:facet name="end"/>
+        <f:facet name="top"/>
+      </af:panelStretchLayout>
+    </af:form>
+  </af:document>
+</f:view>

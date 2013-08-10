@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="11.1.2.64.36" id="DataBindings"
+             SeparateXMLFiles="false" Package="peddi.adftutorial.taskflow.view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/TaskFlow.jsf" usageId="peddi_adftutorial_taskflow_view_TaskFlowPageDef"/>
+    <page path="/PageVariables.jsf" usageId="peddi_adftutorial_taskflow_view_PageVariablesPageDef"/>
+    <page path="/DisplayEmployee.jsff" usageId="peddi_adftutorial_taskflow_view_DisplayEmployeePageDef"/>
+    <page path="/WEB-INF/EmployeesTaskflow.xml#EmployeesTaskflow@methodCall1"
+          usageId="peddi_adftutorial_taskflow_view_EmployeesTaskflow_EmployeesTaskflow_methodCall1PageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="peddi_adftutorial_taskflow_view_TaskFlowPageDef"
+          path="peddi.adftutorial.taskflow.view.pageDefs.TaskFlowPageDef"/>
+    <page id="peddi_adftutorial_taskflow_view_PageVariablesPageDef"
+          path="peddi.adftutorial.taskflow.view.pageDefs.PageVariablesPageDef"/>
+    <page id="peddi_adftutorial_taskflow_view_DisplayEmployeePageDef"
+          path="peddi.adftutorial.taskflow.view.pageDefs.DisplayEmployeePageDef"/>
+    <page id="peddi_adftutorial_taskflow_view_EmployeesTaskflow_EmployeesTaskflow_methodCall1PageDef"
+          path="peddi.adftutorial.taskflow.view.pageDefs.EmployeesTaskflow_EmployeesTaskflow_methodCall1PageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="HRSystemAMDataControl" Package="peddi.adftutorial.demo.model.service"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="HRSystemAMLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

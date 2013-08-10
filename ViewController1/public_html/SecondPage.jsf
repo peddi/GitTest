@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="Second Page In Taskflow" id="d1" shortDesc="Second Page">
+        <af:form id="f1">
+            <af:commandButton text="First" id="cb1" action="First"/>
+            <af:commandButton text="Third" id="cb2" action="Third"/>
+            <af:commandButton text="Fourth" id="cb3" action="Fourth"/>
+        </af:form>
+    </af:document>
+</f:view>

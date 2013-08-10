@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+        xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
+    <af:document title="Hierarchy.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <dvt:hierarchyViewer inlineStyle="width:100%;height:600px;" id="hv1" var="node"
+                                 value="#{bindings.DepartmentsVO1.treeModel}"
+                                 selectionListener="#{bindings.DepartmentsVO1.treeModel.makeCurrent}"
+                                 detailWindow="none" layout="hier_vert_top"
+                                 levelFetchSize="3" displayLevelsChildren="0">
+                <dvt:link linkType="orthogonalRounded" id="l1"/>
+                <dvt:node type="peddi.adftutorial.demo.model.view.DepartmentsVO" width="233" height="233" id="n1">
+                    <f:facet name="zoom100">
+                        <af:panelGroupLayout inlineStyle="padding:5px;" layout="vertical" id="pgl1">
+                            <af:panelGroupLayout layout="horizontal" id="pgl2">
+                                <af:panelGroupLayout layout="vertical" id="pgl3">
+                                    <af:outputText value="#{node.DepartmentName}"
+                                                   shortDesc="#{bindings.DepartmentsVO1.hints.DepartmentName.tooltip}"
+                                                   inlineStyle="font-weight:bold;font-size:14px;color:#383A47"
+                                                   id="ot1"/>
+                                </af:panelGroupLayout>
+                            </af:panelGroupLayout>
+                            <af:spacer height="5" id="s1"/>
+                            <dvt:panelCard effect="slide_horz" id="pc1">
+                                <af:showDetailItem text="Panel Card 1" id="sdi1">
+                                    <af:spacer height="2" id="s2"/>
+                                    <af:panelFormLayout inlineStyle="padding:5px;" id="pfl1">
+                                        <af:outputText value="#{node.ManagerId}"
+                                                       shortDesc="#{bindings.DepartmentsVO1.hints.ManagerId.tooltip}"
+                                                       inlineStyle="font-size:14px;color:#383A47" id="ot2">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.DepartmentsVO1.hints.ManagerId.format}"/>
+                                        </af:outputText>
+                                        <af:outputText value="#{node.DepartmentId}"
+                                                       shortDesc="#{bindings.DepartmentsVO1.hints.DepartmentId.tooltip}"
+                                                       inlineStyle="font-size:14px;color:#383A47" id="ot3">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.DepartmentsVO1.hints.DepartmentId.format}"/>
+                                        </af:outputText>
+                                        <af:panelLabelAndMessage label="#{bindings.DepartmentsVO1.hints.LocationId.label}"
+                                                                 labelStyle="font-size:14px;color:#5A6A7A" id="plam1">
+                                            <af:outputText value="#{node.LocationId}"
+                                                           shortDesc="#{bindings.DepartmentsVO1.hints.LocationId.tooltip}"
+                                                           inlineStyle="font-size:14px;color:#383A47" id="ot4">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.DepartmentsVO1.hints.LocationId.format}"/>
+                                            </af:outputText>
+                                        </af:panelLabelAndMessage>
+                                    </af:panelFormLayout>
+                                </af:showDetailItem>
+                            </dvt:panelCard>
+                        </af:panelGroupLayout>
+                    </f:facet>
+                </dvt:node>
+                <dvt:node type="peddi.adftutorial.demo.model.view.EmployeesVO" width="233" height="233" id="n2">
+                    <f:facet name="zoom100">
+                        <af:panelGroupLayout inlineStyle="padding:5px;" layout="vertical" id="pgl4">
+                            <af:panelGroupLayout layout="horizontal" id="pgl5">
+                                <af:panelGroupLayout layout="vertical" id="pgl6">
+                                    <af:outputText value="#{node.EmployeeId}"
+                                                   shortDesc="#{bindings.DepartmentsVO1.hints.EmployeeId.tooltip}"
+                                                   inlineStyle="font-weight:bold;font-size:14px;color:#383A47" id="ot5">
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.DepartmentsVO1.hints.EmployeeId.format}"/>
+                                    </af:outputText>
+                                    <af:outputText value="#{node.FirstName}"
+                                                   shortDesc="#{bindings.DepartmentsVO1.hints.FirstName.tooltip}"
+                                                   inlineStyle="font-size:14px;color:#383A47" id="ot6"/>
+                                    <af:outputText value="#{node.LastName}"
+                                                   shortDesc="#{bindings.DepartmentsVO1.hints.LastName.tooltip}"
+                                                   inlineStyle="font-style:italic;font-size:14px;color:#383A47"
+                                                   id="ot7"/>
+                                </af:panelGroupLayout>
+                            </af:panelGroupLayout>
+                            <af:spacer height="5" id="s3"/>
+                            <dvt:panelCard effect="slide_horz" id="pc2">
+                                <af:showDetailItem text="Panel Card 1" id="sdi2">
+                                    <af:spacer height="2" id="s4"/>
+                                    <af:panelFormLayout inlineStyle="padding:5px;" id="pfl2">
+                                        <af:panelLabelAndMessage label="#{bindings.DepartmentsVO1.hints.Salary.label}"
+                                                                 labelStyle="font-size:14px;color:#5A6A7A" id="plam2">
+                                            <af:outputText value="#{node.Salary}"
+                                                           shortDesc="#{bindings.DepartmentsVO1.hints.Salary.tooltip}"
+                                                           inlineStyle="font-size:14px;color:#383A47" id="ot8"/>
+                                        </af:panelLabelAndMessage>
+                                        <af:panelLabelAndMessage label="#{bindings.DepartmentsVO1.hints.HireDate.label}"
+                                                                 labelStyle="font-size:14px;color:#5A6A7A" id="plam3">
+                                            <af:outputText value="#{node.HireDate}"
+                                                           shortDesc="#{bindings.DepartmentsVO1.hints.HireDate.tooltip}"
+                                                           inlineStyle="font-size:14px;color:#383A47" id="ot9">
+                                                <af:convertDateTime pattern="#{bindings.DepartmentsVO1.hints.HireDate.format}"/>
+                                            </af:outputText>
+                                        </af:panelLabelAndMessage>
+                                        <af:panelLabelAndMessage label="#{bindings.DepartmentsVO1.hints.Email.label}"
+                                                                 labelStyle="font-size:14px;color:#5A6A7A" id="plam4">
+                                            <af:outputText value="#{node.Email}"
+                                                           shortDesc="#{bindings.DepartmentsVO1.hints.Email.tooltip}"
+                                                           inlineStyle="font-size:14px;color:#383A47" id="ot10"/>
+                                        </af:panelLabelAndMessage>
+                                        <af:panelLabelAndMessage label="#{bindings.DepartmentsVO1.hints.FullName.label}"
+                                                                 labelStyle="font-size:14px;color:#5A6A7A" id="plam5">
+                                            <af:outputText value="#{node.FullName}"
+                                                           shortDesc="#{bindings.DepartmentsVO1.hints.FullName.tooltip}"
+                                                           inlineStyle="font-size:14px;color:#383A47" id="ot11"/>
+                                        </af:panelLabelAndMessage>
+                                        <af:panelLabelAndMessage label="#{bindings.DepartmentsVO1.hints.PhoneNumber.label}"
+                                                                 labelStyle="font-size:14px;color:#5A6A7A" id="plam6">
+                                            <af:outputText value="#{node.PhoneNumber}"
+                                                           shortDesc="#{bindings.DepartmentsVO1.hints.PhoneNumber.tooltip}"
+                                                           inlineStyle="font-size:14px;color:#383A47" id="ot12"/>
+                                        </af:panelLabelAndMessage>
+                                    </af:panelFormLayout>
+                                </af:showDetailItem>
+                            </dvt:panelCard>
+                        </af:panelGroupLayout>
+                    </f:facet>
+                </dvt:node>
+            </dvt:hierarchyViewer>
+        </af:form>
+    </af:document>
+</f:view>

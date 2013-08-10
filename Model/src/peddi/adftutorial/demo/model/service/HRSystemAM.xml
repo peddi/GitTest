@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="HRSystemAM"
+  Version="11.1.2.64.36"
+  ClearCacheOnRollback="true"
+  ComponentClass="peddi.adftutorial.demo.model.service.HRSystemAMImpl"
+  ComponentInterface="peddi.adftutorial.demo.model.service.common.HRSystemAM"
+  ClientProxyName="peddi.adftutorial.demo.model.service.client.HRSystemAMClient">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewUsage
+    Name="DepartmentsVO1"
+    ViewObjectName="peddi.adftutorial.demo.model.view.DepartmentsVO"/>
+  <ViewUsage
+    Name="EmployeesVO1"
+    ViewObjectName="peddi.adftutorial.demo.model.view.EmployeesVO"/>
+  <ViewUsage
+    Name="JobsVO1"
+    ViewObjectName="peddi.adftutorial.demo.model.view.JobsVO"/>
+  <ViewUsage
+    Name="EmployeesVO2"
+    ViewObjectName="peddi.adftutorial.demo.model.view.EmployeesVO"/>
+  <ViewUsage
+    Name="EmployeesVO3"
+    ViewObjectName="peddi.adftutorial.demo.model.view.EmployeesVO"/>
+  <ViewUsage
+    Name="DepartmentsVO2"
+    ViewObjectName="peddi.adftutorial.demo.model.view.DepartmentsVO"/>
+  <ViewUsage
+    Name="EmpDetailsVO1"
+    ViewObjectName="peddi.adftutorial.demo.model.view.EmpDetailsVO"/>
+  <ViewUsage
+    Name="EmpByEmailVO1"
+    ViewObjectName="peddi.adftutorial.demo.model.view.EmpByEmailVO"/>
+  <ViewUsage
+    Name="EmployeeVOBindVariables1"
+    ViewObjectName="peddi.adftutorial.demo.model.view.EmployeeVOBindVariables"/>
+  <ViewUsage
+    Name="EmloyeesVOViewCriteria1"
+    ViewObjectName="peddi.adftutorial.demo.model.view.EmloyeesVOViewCriteria"/>
+  <ViewUsage
+    Name="CheckNListVO1"
+    ViewObjectName="peddi.adftutorial.demo.model.view.CheckNListVO"/>
+  <ViewLinkUsage
+    Name="EmpManagerFkLink1"
+    ViewLinkObjectName="peddi.adftutorial.demo.model.view.EmpManagerFkLink"
+    SrcViewUsageName="peddi.adftutorial.demo.model.service.HRSystemAM.EmployeesVO1"
+    DstViewUsageName="peddi.adftutorial.demo.model.service.HRSystemAM.EmployeesVO2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="EmpDeptFkLink1"
+    ViewLinkObjectName="peddi.adftutorial.demo.model.view.EmpDeptFkLink"
+    SrcViewUsageName="peddi.adftutorial.demo.model.service.HRSystemAM.DepartmentsVO1"
+    DstViewUsageName="peddi.adftutorial.demo.model.service.HRSystemAM.EmployeesVO3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="DeptMgrFkLink1"
+    ViewLinkObjectName="peddi.adftutorial.demo.model.view.DeptMgrFkLink"
+    SrcViewUsageName="peddi.adftutorial.demo.model.service.HRSystemAM.EmployeesVO1"
+    DstViewUsageName="peddi.adftutorial.demo.model.service.HRSystemAM.DepartmentsVO2"
+    Reversed="false"/>
+  <ClientInterface>
+    <Method
+      Name="populateCheckNListVO1"
+      MethodName="populateCheckNListVO1">
+      <Return
+        Type="void"/>
+      <Parameter
+        Name="selectedValues"
+        Type="java.util.HashMap"/>
+    </Method>
+  </ClientInterface>
+</AppModule>

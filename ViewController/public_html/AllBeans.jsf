@@ -1,0 +1,247 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="AllBeans.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelStretchLayout id="psl1" endWidth="2px" bottomHeight="0px">
+                <f:facet name="bottom"/>
+                <f:facet name="center">
+                    <af:panelSplitter id="ps1" splitterPosition="400">
+                        <f:facet name="first">
+                            <af:panelFormLayout id="pfl1">
+                                <af:inputText value="#{bindings.FirstName.inputValue}"
+                                              label="#{bindings.FirstName.hints.label}"
+                                              required="#{bindings.FirstName.hints.mandatory}"
+                                              columns="#{bindings.FirstName.hints.displayWidth}"
+                                              maximumLength="#{bindings.FirstName.hints.precision}"
+                                              shortDesc="#{bindings.FirstName.hints.tooltip}" id="it1"
+                                              autoSubmit="true">
+                                    <f:validator binding="#{bindings.FirstName.validator}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.LastName.inputValue}"
+                                              label="#{bindings.LastName.hints.label}"
+                                              required="#{bindings.LastName.hints.mandatory}"
+                                              columns="#{bindings.LastName.hints.displayWidth}"
+                                              maximumLength="#{bindings.LastName.hints.precision}"
+                                              shortDesc="#{bindings.LastName.hints.tooltip}" id="it2" changed="true"
+                                              changedDesc="The value is changed" labelAndAccessKey="&amp;Last"
+                                              autoSubmit="true">
+                                    <f:validator binding="#{bindings.LastName.validator}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.Email.inputValue}" label="#{bindings.Email.hints.label}"
+                                              required="#{bindings.Email.hints.mandatory}"
+                                              columns="#{bindings.Email.hints.displayWidth}"
+                                              maximumLength="#{bindings.Email.hints.precision}"
+                                              shortDesc="#{bindings.Email.hints.tooltip}" id="it3">
+                                    <f:validator binding="#{bindings.Email.validator}"/>
+                                </af:inputText>
+                                <af:inputDate value="#{bindings.HireDate.inputValue}"
+                                              label="#{bindings.HireDate.hints.label}"
+                                              required="#{bindings.HireDate.hints.mandatory}"
+                                              columns="#{bindings.HireDate.hints.displayWidth}"
+                                              shortDesc="#{bindings.HireDate.hints.tooltip}" id="id1">
+                                    <f:validator binding="#{bindings.HireDate.validator}"/>
+                                    <af:convertDateTime pattern="#{bindings.HireDate.format}"/>
+                                </af:inputDate>
+                                <af:inputText value="#{bindings.Salary.inputValue}"
+                                              label="#{bindings.Salary.hints.label}"
+                                              required="#{bindings.Salary.hints.mandatory}"
+                                              columns="#{bindings.Salary.hints.displayWidth}"
+                                              maximumLength="#{bindings.Salary.hints.precision}"
+                                              shortDesc="#{bindings.Salary.hints.tooltip}" id="it4">
+                                    <f:validator binding="#{bindings.Salary.validator}"/>
+                                </af:inputText>
+                                <af:inputText label="Label 1" id="it5" rows="3" simple="true"
+                                              partialTriggers="it1 it2"
+                                              value='#{bindings.FirstName.inputValue} #{bindings.LastName.inputValue}'/>
+                                <af:inputText label="From Others" id="FromOthers" clientComponent="true"/>
+                                <f:facet name="footer">
+                                    <af:panelGroupLayout layout="horizontal" id="pgl1">
+                                        <f:facet name="separator">
+                                            <af:spacer width="10" height="1" id="s1"/>
+                                        </f:facet>
+                                        <af:commandButton actionListener="#{bindings.First.execute}" text="First"
+                                                          disabled="#{!bindings.First.enabled}" partialSubmit="true"
+                                                          id="cb1"/>
+                                        <af:commandButton actionListener="#{bindings.Previous.execute}" text="Previous"
+                                                          disabled="#{!bindings.Previous.enabled}" partialSubmit="true"
+                                                          id="cb2"/>
+                                        <af:commandButton actionListener="#{bindings.Next.execute}" text="Next"
+                                                          disabled="#{!bindings.Next.enabled}" partialSubmit="true"
+                                                          id="cb3"/>
+                                        <af:commandButton actionListener="#{bindings.Last.execute}" text="Last"
+                                                          disabled="#{!bindings.Last.enabled}" partialSubmit="true"
+                                                          id="cb4"/>
+                                        <af:commandButton text="Get Name" id="FromButton">
+                                            <af:insertTextBehavior for="FromOthers"
+                                                                   value="#{bindings.FirstName.inputValue}"
+                                                                   triggerType="click"/>
+                                        </af:commandButton>
+                                    </af:panelGroupLayout>
+                                </f:facet>
+                            </af:panelFormLayout>
+                        </f:facet>
+                        <f:facet name="second">
+                            <af:panelTabbed id="pt1">
+                                <af:showDetailItem text="Sliders" id="sdi1">
+                                    <af:inputNumberSlider label="Slider Number" id="ins1" maximum="100"
+                                                          minimumIncrement="1" majorIncrement="5" minorIncrement="1"
+                                                          value="50" contentStyle="width:679px;"/>
+                                    <af:inputRangeSlider label="Slider Range" id="irs1" contentStyle="width:679px;"
+                                                         maximum="100" minimumIncrement="5" majorIncrement="10"
+                                                         minorIncrement="1"/>
+                                    <af:inputNumberSpinbox label="Spin Box" id="ins2" minimum="0" maximum="100"/>
+                                    <af:inputDate label="Date" id="id2" disabledDaysOfWeek="sat sun" autoComplete="on"/>
+                                    <af:chooseDate id="cd1"/>
+                                </af:showDetailItem>
+                                <af:showDetailItem text="Others" id="sdi2">
+                                    <af:panelDashboard id="pd1" columns="2" dimensionsFrom="auto" rowHeight="400px">
+                                        <af:panelBox text="Selection Lists" id="pb1">
+                                            <f:facet name="toolbar"/>
+                                            <af:panelFormLayout id="pfl2">
+                                                <af:selectOneChoice label="selectOneChoice"
+                                                                    requiredMessageDetail="Please select a color"
+                                                                    id="soc1"
+                                                                    binding="#{PopulatePopup.selectOneChoice}">
+                                                    <af:selectItem label="Red" value="R" id="si1"/>
+                                                    <af:selectItem label="Green" value="G" id="si2"/>
+                                                    <af:selectItem label="Orange" value="O" id="si3"/>
+                                                </af:selectOneChoice>
+                                                <af:selectManyChoice label="selectManyChoice" id="smc1"
+                                                                     binding="#{PopulatePopup.selectManyChoice}">
+                                                    <af:selectItem label="Violet" value="V" id="si4"/>
+                                                    <af:selectItem label="Indigo" value="I" id="si5"/>
+                                                    <af:selectItem label="Blue" value="B" id="si6"/>
+                                                    <af:selectItem label="Green" value="G" id="si7"/>
+                                                    <af:selectItem label="Yellow" value="Y" id="si8"/>
+                                                    <af:selectItem label="Orange" value="O" id="si9"/>
+                                                    <af:selectItem label="Red" value="R" id="si10"/>
+                                                </af:selectManyChoice>
+                                                <af:selectBooleanCheckbox text="Vegetarian"
+                                                                          label="selectBooleanCheckbox" id="sbc1"
+                                                                          selected="true"
+                                                                          binding="#{PopulatePopup.selectBooleanCheckBox}"/>
+                                                <af:selectManyCheckbox label="selectManyCheckbox" id="smc2"
+                                                                       layout="horizontal"
+                                                                       binding="#{PopulatePopup.selectManyCheckBox}">
+                                                    <af:selectItem label="Mango" value="M" id="si11"/>
+                                                    <af:selectItem label="Orange" value="O" id="si12"/>
+                                                    <af:selectItem label="Grapes" value="G" id="si13"/>
+                                                    <af:selectItem label="Watermelon" value="W" id="si14"/>
+                                                    <af:selectItem label="Banana" value="B" id="si15"/>
+                                                </af:selectManyCheckbox>
+                                                <af:selectOneListbox label="selectOneListbox" id="sol1" size="3"
+                                                                     binding="#{PopulatePopup.selectOneListBox}">
+                                                    <af:selectItem label="Rice" value="R" id="si16"/>
+                                                    <af:selectItem label="Wheat" value="W" id="si17"/>
+                                                    <af:selectItem label="Black Gram" value="B" id="si18"/>
+                                                    <af:selectItem label="Yellow Dal" value="Y" id="si19"/>
+                                                </af:selectOneListbox>
+                                                <af:selectManyListbox label="selectManyListbox" id="sml1" size="2"
+                                                                      binding="#{PopulatePopup.selectManyListBox}">
+                                                    <af:selectItem label="Fanta" value="F" id="si20"/>
+                                                    <af:selectItem label="Coke" value="C" id="si21"/>
+                                                    <af:selectItem label="Pepsi" value="P" id="si22"/>
+                                                    <af:selectItem label="Maaza" value="M" id="si23"/>
+                                                    <af:selectItem label="Sprite" value="S" id="si24"/>
+                                                </af:selectManyListbox>
+                                                <af:selectOneRadio label="selectOneRadio" id="sor1" layout="horizontal"
+                                                                   binding="#{PopulatePopup.selectOneRadio}">
+                                                    <af:selectItem label="Married" value="M" id="si25"/>
+                                                    <af:selectItem label="Single" value="S" id="si26"/>
+                                                    <af:selectItem label="Divorced" value="D" id="si27"/>
+                                                    <af:selectItem label="I Don't Care" value="N" id="si28"/>
+                                                </af:selectOneRadio>
+                                                <af:selectBooleanRadio text="Yes" label="selectBooleanRadio 1" id="sbr1"
+                                                                       group="YesNo" selected="true"
+                                                                       binding="#{PopulatePopup.selectBooleanRadio}"/>
+                                                <af:selectBooleanRadio text="No" label="selectBooleanRadio 2" id="sbr2"
+                                                                       group="YesNo" selected="true"/>
+                                                <af:commandButton text="Display Popup" id="cb5"
+                                                                  actionListener="#{PopulatePopup.populatePopupVO}"/>
+                                                <af:commandButton actionListener="#{bindings.populateCheckNListVO1.execute}"
+                                                                  text="populateCheckNListVO1"
+                                                                  disabled="#{!bindings.populateCheckNListVO1.enabled}"
+                                                                  id="cb6">
+                                                    <af:showPopupBehavior popupId="ListBoxPopup" triggerType="action"
+                                                                          align="endAfter"/>
+                                                </af:commandButton>
+                                            </af:panelFormLayout>
+                                        </af:panelBox>
+                                        <af:panelBox text="Shuttles" id="pb2">
+                                            <f:facet name="toolbar"/>
+                                            <af:panelFormLayout id="pfl3" rows="1">
+                                                <f:facet name="footer"/>
+                                                <af:selectOrderShuttle label="selectOrderShuttle" id="sos1">
+                                                    <af:selectItem label="India" value="INR" id="si35"/>
+                                                    <af:selectItem label="USA" value="USD" id="si36"/>
+                                                    <af:selectItem label="UK" value="GBP" id="si37"/>
+                                                    <af:selectItem label="China" value="CNY" id="si38"/>
+                                                    <af:selectItem label="Japan" value="YEN" id="si39"/>
+                                                    <af:selectItem label="Mexico" value="PISO" id="si40"/>
+                                                </af:selectOrderShuttle>
+                                                <af:selectManyShuttle label="selectManyShuttle" id="sms1" size="5"
+                                                                      layout="vertical" leadingHeader="Available"
+                                                                      trailingHeader="Selected">
+                                                    <af:selectItem label="India" value="INR" id="si29"/>
+                                                    <af:selectItem label="USA" value="USD" id="si30"/>
+                                                    <af:selectItem label="UK" value="GBP" id="si31"/>
+                                                    <af:selectItem label="China" value="CNY" id="si32"/>
+                                                    <af:selectItem label="Japan" value="YEN" id="si33"/>
+                                                    <af:selectItem label="Mexico" value="PISO" id="si34"/>
+                                                </af:selectManyShuttle>
+                                            </af:panelFormLayout>
+                                        </af:panelBox>
+                                    </af:panelDashboard>
+                                </af:showDetailItem>
+                            </af:panelTabbed>
+                        </f:facet>
+                    </af:panelSplitter>
+                </f:facet>
+                <f:facet name="start"/>
+                <f:facet name="end"/>
+                <f:facet name="top"/>
+            </af:panelStretchLayout>
+            <af:popup childCreation="deferred" autoCancel="disabled" id="ListBoxPopup">
+                <af:panelWindow id="pw1">
+                    <af:panelFormLayout id="pfl4">
+                        <af:panelLabelAndMessage label="#{bindings.SelectOneChoice.hints.label}" id="plam1">
+                            <af:outputText value="#{bindings.SelectOneChoice.inputValue}"
+                                           shortDesc="#{bindings.SelectOneChoice.hints.tooltip}" id="ot1"/>
+                        </af:panelLabelAndMessage>
+                        <af:panelLabelAndMessage label="#{bindings.SelectManyChoice.hints.label}" id="plam2">
+                            <af:outputText value="#{bindings.SelectManyChoice.inputValue}"
+                                           shortDesc="#{bindings.SelectManyChoice.hints.tooltip}" id="ot2"/>
+                        </af:panelLabelAndMessage>
+                        <af:panelLabelAndMessage label="#{bindings.SelectBoolChkBox.hints.label}" id="plam3">
+                            <af:outputText value="#{bindings.SelectBoolChkBox.inputValue}"
+                                           shortDesc="#{bindings.SelectBoolChkBox.hints.tooltip}" id="ot3"/>
+                        </af:panelLabelAndMessage>
+                        <af:panelLabelAndMessage label="#{bindings.SelectManyChkBox.hints.label}" id="plam4">
+                            <af:outputText value="#{bindings.SelectManyChkBox.inputValue}"
+                                           shortDesc="#{bindings.SelectManyChkBox.hints.tooltip}" id="ot4"/>
+                        </af:panelLabelAndMessage>
+                        <af:panelLabelAndMessage label="#{bindings.SelectOneListBox.hints.label}" id="plam5">
+                            <af:outputText value="#{bindings.SelectOneListBox.inputValue}"
+                                           shortDesc="#{bindings.SelectOneListBox.hints.tooltip}" id="ot5"/>
+                        </af:panelLabelAndMessage>
+                        <af:panelLabelAndMessage label="#{bindings.SelectManyListBox.hints.label}" id="plam6">
+                            <af:outputText value="#{bindings.SelectManyListBox.inputValue}"
+                                           shortDesc="#{bindings.SelectManyListBox.hints.tooltip}" id="ot6"/>
+                        </af:panelLabelAndMessage>
+                        <af:panelLabelAndMessage label="#{bindings.SelectOneRadio.hints.label}" id="plam7">
+                            <af:outputText value="#{bindings.SelectOneRadio.inputValue}"
+                                           shortDesc="#{bindings.SelectOneRadio.hints.tooltip}" id="ot7"/>
+                        </af:panelLabelAndMessage>
+                        <af:panelLabelAndMessage label="#{bindings.SelectBoolRadio.hints.label}" id="plam8">
+                            <af:outputText value="#{bindings.SelectBoolRadio.inputValue}"
+                                           shortDesc="#{bindings.SelectBoolRadio.hints.tooltip}" id="ot8"/>
+                        </af:panelLabelAndMessage>
+                    </af:panelFormLayout>
+                </af:panelWindow>
+            </af:popup>
+        </af:form>
+    </af:document>
+    <!--oracle-jdev-comment:preferred-managed-bean-name:PopulatePopup-->
+</f:view>

@@ -1,0 +1,223 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="Tree.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelSplitter id="ps1" splitterPosition="314">
+                <f:facet name="first">
+                    <af:panelTabbed id="pt1">
+                        <af:showDetailItem text="Departments" id="sdi1" stretchChildren="first">
+                            <af:tree value="#{bindings.DepartmentsVO1.treeModel}" var="node"
+                                     selectionListener="#{bindings.DepartmentsVO1.treeModel.makeCurrent}"
+                                     rowSelection="single" id="t1">
+                                <f:facet name="nodeStamp">
+                                    <af:outputText value="#{node}" id="ot1"/>
+                                </f:facet>
+                            </af:tree>
+                        </af:showDetailItem>
+                        <af:showDetailItem text="Supervisors" id="sdi2" stretchChildren="first">
+                            <af:tree value="#{bindings.EmployeesVO1.treeModel}" var="node"
+                                     selectionListener="#{bindings.EmployeesVO1.treeModel.makeCurrent}"
+                                     rowSelection="single" id="t2">
+                                <f:facet name="nodeStamp">
+                                    <af:outputText value="#{node}" id="ot17"/>
+                                </f:facet>
+                            </af:tree>
+                        </af:showDetailItem>
+                    </af:panelTabbed>
+                </f:facet>
+                <f:facet name="second">
+                    <af:panelGroupLayout id="pgl1">
+                        <af:panelDashboard id="pd1" columns="2" rowHeight="300px" dimensionsFrom="children">
+                            <af:panelBox text="PanelBox1" id="pb1">
+                                <f:facet name="toolbar"/>
+                                <af:panelFormLayout id="pfl1">
+                                    <af:panelLabelAndMessage label="#{bindings.EmployeeId.hints.label}" id="plam1">
+                                        <af:outputText value="#{bindings.EmployeeId.inputValue}"
+                                                       shortDesc="#{bindings.EmployeeId.hints.tooltip}" id="ot2">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.EmployeeId.format}"/>
+                                        </af:outputText>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.FirstName.hints.label}" id="plam2">
+                                        <af:outputText value="#{bindings.FirstName.inputValue}"
+                                                       shortDesc="#{bindings.FirstName.hints.tooltip}" id="ot3"/>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.LastName.hints.label}" id="plam3">
+                                        <af:outputText value="#{bindings.LastName.inputValue}"
+                                                       shortDesc="#{bindings.LastName.hints.tooltip}" id="ot4"/>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.Email.hints.label}" id="plam4">
+                                        <af:outputText value="#{bindings.Email.inputValue}"
+                                                       shortDesc="#{bindings.Email.hints.tooltip}" id="ot5"/>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.HireDate.hints.label}" id="plam5">
+                                        <af:outputText value="#{bindings.HireDate.inputValue}"
+                                                       shortDesc="#{bindings.HireDate.hints.tooltip}" id="ot6">
+                                            <af:convertDateTime pattern="#{bindings.HireDate.format}"/>
+                                        </af:outputText>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.Salary.hints.label}" id="plam6">
+                                        <af:outputText value="#{bindings.Salary.inputValue}"
+                                                       shortDesc="#{bindings.Salary.hints.tooltip}" id="ot7"/>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.JobId.hints.label}" id="plam7">
+                                        <af:outputText value="#{bindings.JobId.inputValue}"
+                                                       shortDesc="#{bindings.JobId.hints.tooltip}" id="ot8"/>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.DepartmentId.hints.label}" id="plam8">
+                                        <af:outputText value="#{bindings.DepartmentId.inputValue}"
+                                                       shortDesc="#{bindings.DepartmentId.hints.tooltip}" id="ot9">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.DepartmentId.format}"/>
+                                        </af:outputText>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.DepartmentName.hints.label}" id="plam9">
+                                        <af:outputText value="#{bindings.DepartmentName.inputValue}"
+                                                       shortDesc="#{bindings.DepartmentName.hints.tooltip}" id="ot10"/>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.AnnualSalary.hints.label}" id="plam10">
+                                        <af:outputText value="#{bindings.AnnualSalary.inputValue}"
+                                                       shortDesc="#{bindings.AnnualSalary.hints.tooltip}" id="ot11">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.AnnualSalary.format}"/>
+                                        </af:outputText>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.FullName.hints.label}" id="plam11">
+                                        <af:outputText value="#{bindings.FullName.inputValue}"
+                                                       shortDesc="#{bindings.FullName.hints.tooltip}" id="ot12"/>
+                                    </af:panelLabelAndMessage>
+                                </af:panelFormLayout>
+                            </af:panelBox>
+                            <af:panelBox text="PanelBox2" id="pb2">
+                                <f:facet name="toolbar"/>
+                                <af:panelFormLayout id="pfl2">
+                                    <af:panelLabelAndMessage label="#{bindings.DepartmentId1.hints.label}" id="plam12">
+                                        <af:outputText value="#{bindings.DepartmentId1.inputValue}"
+                                                       shortDesc="#{bindings.DepartmentId1.hints.tooltip}" id="ot13">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.DepartmentId1.format}"/>
+                                        </af:outputText>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.DepartmentName1.hints.label}"
+                                                             id="plam13">
+                                        <af:outputText value="#{bindings.DepartmentName1.inputValue}"
+                                                       shortDesc="#{bindings.DepartmentName1.hints.tooltip}" id="ot14"/>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.ManagerId.hints.label}" id="plam14">
+                                        <af:outputText value="#{bindings.ManagerId.inputValue}"
+                                                       shortDesc="#{bindings.ManagerId.hints.tooltip}" id="ot15">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.ManagerId.format}"/>
+                                        </af:outputText>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.LocationId.hints.label}" id="plam15">
+                                        <af:outputText value="#{bindings.LocationId.inputValue}"
+                                                       shortDesc="#{bindings.LocationId.hints.tooltip}" id="ot16">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.LocationId.format}"/>
+                                        </af:outputText>
+                                    </af:panelLabelAndMessage>
+                                </af:panelFormLayout>
+                            </af:panelBox>
+                            <af:panelBox text="PanelBox3" id="pb3">
+                                <f:facet name="toolbar"/>
+                                <af:panelFormLayout id="pfl3">
+                                    <af:panelLabelAndMessage label="#{bindings.EmployeeId1.hints.label}" id="plam16">
+                                        <af:outputText value="#{bindings.EmployeeId1.inputValue}"
+                                                       shortDesc="#{bindings.EmployeeId1.hints.tooltip}" id="ot18">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.EmployeeId1.format}"/>
+                                        </af:outputText>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.FirstName1.hints.label}" id="plam17">
+                                        <af:outputText value="#{bindings.FirstName1.inputValue}"
+                                                       shortDesc="#{bindings.FirstName1.hints.tooltip}" id="ot19"/>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.LastName1.hints.label}" id="plam18">
+                                        <af:outputText value="#{bindings.LastName1.inputValue}"
+                                                       shortDesc="#{bindings.LastName1.hints.tooltip}" id="ot20"/>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.Email1.hints.label}" id="plam19">
+                                        <af:outputText value="#{bindings.Email1.inputValue}"
+                                                       shortDesc="#{bindings.Email1.hints.tooltip}" id="ot21"/>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.PhoneNumber.hints.label}" id="plam20">
+                                        <af:outputText value="#{bindings.PhoneNumber.inputValue}"
+                                                       shortDesc="#{bindings.PhoneNumber.hints.tooltip}" id="ot22"/>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.HireDate1.hints.label}" id="plam21">
+                                        <af:outputText value="#{bindings.HireDate1.inputValue}"
+                                                       shortDesc="#{bindings.HireDate1.hints.tooltip}" id="ot23">
+                                            <af:convertDateTime pattern="#{bindings.HireDate1.format}"/>
+                                        </af:outputText>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.JobId1.hints.label}" id="plam22">
+                                        <af:outputText value="#{bindings.JobId1.inputValue}"
+                                                       shortDesc="#{bindings.JobId1.hints.tooltip}" id="ot24"/>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.Salary1.hints.label}" id="plam23">
+                                        <af:outputText value="#{bindings.Salary1.inputValue}"
+                                                       shortDesc="#{bindings.Salary1.hints.tooltip}" id="ot25"/>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.CommissionPct.hints.label}" id="plam24">
+                                        <af:outputText value="#{bindings.CommissionPct.inputValue}"
+                                                       shortDesc="#{bindings.CommissionPct.hints.tooltip}" id="ot26"/>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.ManagerId1.hints.label}" id="plam25">
+                                        <af:outputText value="#{bindings.ManagerId1.inputValue}"
+                                                       shortDesc="#{bindings.ManagerId1.hints.tooltip}" id="ot27">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.ManagerId1.format}"/>
+                                        </af:outputText>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.DepartmentId2.hints.label}" id="plam26">
+                                        <af:outputText value="#{bindings.DepartmentId2.inputValue}"
+                                                       shortDesc="#{bindings.DepartmentId2.hints.tooltip}" id="ot28">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.DepartmentId2.format}"/>
+                                        </af:outputText>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.FullName1.hints.label}" id="plam27">
+                                        <af:outputText value="#{bindings.FullName1.inputValue}"
+                                                       shortDesc="#{bindings.FullName1.hints.tooltip}" id="ot29"/>
+                                    </af:panelLabelAndMessage>
+                                    <af:commandButton text="Display Popup" id="cb1">
+                                        <af:showPopupBehavior popupId="p1"/>
+                                    </af:commandButton>
+                                    <af:popup childCreation="deferred" autoCancel="disabled" id="p1">
+                                        <af:dialog id="d2" type="yesNo" title="My Popup" modal="true"
+                                                   closeIconVisible="false" resize="on" stretchChildren="first">
+                                            <af:panelTabbed id="pt2" inlineStyle="width:323px;">
+                                                <af:showDetailItem text="showDetailItem 1" id="sdi3">
+                                                    <af:panelGroupLayout id="pgl2">
+                                                        <af:outputText value="My First Popup" id="ot30"/>
+                                                    </af:panelGroupLayout>
+                                                </af:showDetailItem>
+                                                <af:showDetailItem text="showDetailItem 2" id="sdi4">
+                                                    <af:panelFormLayout id="pfl4">
+                                                        <f:facet name="footer"/>
+                                                        <af:outputText value="My First Popup" id="ot31"/>
+                                                    </af:panelFormLayout>
+                                                </af:showDetailItem>
+                                            </af:panelTabbed>
+                                            <f:facet name="buttonBar">
+                                                <af:group id="g1">
+                                                    <af:commandButton text="commandButton 2" id="cb2"
+                                                                      partialSubmit="true"/>
+                                                    <af:commandButton text="commandButton 3" id="cb3"
+                                                                      partialSubmit="true"/>
+                                                </af:group>
+                                            </f:facet>
+                                        </af:dialog>
+                                    </af:popup>
+                                </af:panelFormLayout>
+                            </af:panelBox>
+                        </af:panelDashboard>
+                    </af:panelGroupLayout>
+                </f:facet>
+            </af:panelSplitter>
+        </af:form>
+    </af:document>
+</f:view>

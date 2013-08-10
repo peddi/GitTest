@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="searchEmailPageDef"
+                Package="peddi.adftutorial.demo.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variableUsage DataControl="HRSystemAMDataControl" Binds="EmpByEmailVO1.variablesMap.p_email"
+                     Name="ExecuteWithParams_p_email" IsQueriable="false"/>
+    </variableIterator>
+    <iterator Binds="EmpByEmailVO1" RangeSize="25" DataControl="HRSystemAMDataControl" id="EmpByEmailVO1Iterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="EmpByEmailVO1Iterator" id="ExecuteWithParams" RequiresUpdateModel="true"
+            Action="executeWithParams">
+      <NamedData NDName="p_email" NDType="java.lang.String" NDValue="${bindings.ExecuteWithParams_p_email}"/>
+    </action>
+    <attributeValues IterBinding="variables" id="p_email">
+      <AttrNames>
+        <Item Value="ExecuteWithParams_p_email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmpByEmailVO1Iterator" id="FirstName">
+      <AttrNames>
+        <Item Value="FirstName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmpByEmailVO1Iterator" id="LastName">
+      <AttrNames>
+        <Item Value="LastName"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

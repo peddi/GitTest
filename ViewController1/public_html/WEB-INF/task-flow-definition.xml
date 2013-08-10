@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="task-flow-definition">
+    <default-activity>FirstView</default-activity>
+    <managed-bean id="__5">
+      <managed-bean-name>managedBean1</managed-bean-name>
+      <managed-bean-class></managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
+    <view id="FirstView"></view>
+    <view id="SecondView"></view>
+    <control-flow-rule id="__3">
+      <from-activity-id>FirstView</from-activity-id>
+      <control-flow-case id="__4">
+        <from-outcome>*Go</from-outcome>
+        <to-activity-id>SecondView</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__7">
+      <from-activity-id>SecondView</from-activity-id>
+      <control-flow-case id="__8">
+        <from-outcome>*Return</from-outcome>
+        <to-activity-id>FirstView</to-activity-id>
+        <if></if>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

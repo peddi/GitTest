@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="peddi.plsql.model.PLSQLAppModule">
+      <AppModuleConfig name="PLSQLAppModuleLocal" jbo.project="peddi.plsql.model.PLSQLModel" ApplicationName="peddi.plsql.model.PLSQLAppModule" DeployPlatform="LOCAL">
+         <Database jbo.TypeMapEntries="OracleApps"/>
+         <Security AppModuleJndiName="peddi.plsql.model.PLSQLAppModule"/>
+         <Custom JDBCDataSource="java:comp/env/jdbc/XE_HRDS"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="PLSQLAppModuleShared" jbo.project="peddi.plsql.model.PLSQLModel" ApplicationName="peddi.plsql.model.PLSQLAppModule" DeployPlatform="LOCAL">
+         <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+         <Database jbo.TypeMapEntries="OracleApps"/>
+         <Security AppModuleJndiName="peddi.plsql.model.PLSQLAppModule"/>
+         <Custom JDBCDataSource="java:comp/env/jdbc/XE_HRDS"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="AppModuleConfig1" ApplicationName="peddi.plsql.model.PLSQLAppModule" DeployPlatform="LOCAL"
+                       jbo.project="peddi.plsql.model.PLSQLModel" JDBCName="XE_HR">
+         <Database jbo.TypeMapEntries="OracleApps"/>
+         <Security AppModuleJndiName="peddi.plsql.model.PLSQLAppModule"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

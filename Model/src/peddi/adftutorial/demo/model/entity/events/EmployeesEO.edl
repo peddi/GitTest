@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<definitions targetNamespace="http://peddi/adftutorial/demo/model/entity/events/edl/EmployeesEO" xmlns:ns0="http://peddi/adftutorial/demo/model/entity/events/schema/EmployeesEO" xmlns="http://schemas.oracle.com/events/edl">
+   <schema-import namespace="http://peddi/adftutorial/demo/model/entity/events/schema/EmployeesEO" location="EmployeesEO.xsd"/>
+   <event-definition name="EmpSalaryChanged">
+      <content element="ns0:EmpSalaryChangedInfo"/>
+   </event-definition>
+</definitions>

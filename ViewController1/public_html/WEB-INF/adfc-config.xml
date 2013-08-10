@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="FirstPage">
+    <page>/FirstPage.jsf</page>
+  </view>
+  <view id="SecondPage">
+    <page>/SecondPage.jsf</page>
+  </view>
+  <view id="Third">
+    <page>/ThirdPage.jsf</page>
+  </view>
+  <view id="Fourth">
+    <page>/FourthPage.jsf</page>
+  </view>
+  <url-view id="urlView1">
+    <url>http://www.oracle.com/index.html</url>
+  </url-view>
+  <control-flow-rule id="__1">
+    <from-activity-id>FirstPage</from-activity-id>
+    <control-flow-case id="__2">
+      <from-outcome>Second</from-outcome>
+      <to-activity-id>SecondPage</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__13">
+      <from-outcome>UrlInvoke</from-outcome>
+      <to-activity-id>urlView1</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__3">
+    <from-activity-id>SecondPage</from-activity-id>
+    <control-flow-case id="__4">
+      <from-outcome>First</from-outcome>
+      <to-activity-id>FirstPage</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__5">
+      <from-outcome>Third</from-outcome>
+      <to-activity-id>Third</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__6">
+      <from-outcome>Fourth</from-outcome>
+      <to-activity-id>Fourth</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__7">
+    <from-activity-id>Third</from-activity-id>
+    <control-flow-case id="__8">
+      <from-outcome>*Second</from-outcome>
+      <to-activity-id>SecondPage</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__12">
+      <from-outcome>First</from-outcome>
+      <to-activity-id>FirstPage</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__9">
+    <from-activity-id>Fourth</from-activity-id>
+    <control-flow-case id="__10">
+      <from-outcome>Second</from-outcome>
+      <to-activity-id>SecondPage</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__11">
+      <from-outcome>First</from-outcome>
+      <to-activity-id>FirstPage</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+</adfc-config>

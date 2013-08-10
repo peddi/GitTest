@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <MethodCall
+      id="MethodCall3">
+      <property
+         name="activityId">methodCall1</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>methodCall1&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">156.29883</property>
+      <property
+         name="x">260.0</property>
+   </MethodCall>
+   <View
+      id="View6">
+      <property
+         name="activityId">DisplayEmployee</property>
+      <property
+         name="page">/DisplayEmployee.jsff</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>DisplayEmployee&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">192.79883</property>
+      <property
+         name="pageFragment">true</property>
+      <property
+         name="x">507.35352</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase7"
+      from="MethodCall3"
+      to="View6">
+      <property
+         name="fromOutcome">*</property>
+      <property
+         name="sdm:polyPoints">R50,301.0,155.94824,466.35352,192.44824,L50</property>
+   </ControlFlowCase>
+</SDM>

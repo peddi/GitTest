@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="11.1.2.64.36" id="DataBindings"
+             SeparateXMLFiles="false" Package="peddi.adftutorial.demo.view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adfm/dvt"
+             className="oracle.adfinternal.view.faces.dvt.model.binding.FacesBindingFactory"/>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/DeptEmpPage.jsf" usageId="peddi_adftutorial_demo_view_DeptEmpPagePageDef"/>
+    <page path="/Query.jsf" usageId="peddi_adftutorial_demo_view_QueryPageDef"/>
+    <page path="/searchEmail.jsff" usageId="peddi_adftutorial_demo_view_searchEmailPageDef"/>
+    <page path="/TableTest.jsf" usageId="peddi_adftutorial_demo_view_TableTestPageDef"/>
+    <page path="/DynamicForm.jsf" usageId="peddi_adftutorial_demo_view_DynamicFormPageDef"/>
+    <page path="/LayoutTest.jsf" usageId="peddi_adftutorial_demo_view_LayoutTestPageDef"/>
+    <page path="/Splitter.jsf" usageId="peddi_adftutorial_demo_view_SplitterPageDef"/>
+    <page path="/GridLayout.jsf" usageId="peddi_adftutorial_demo_view_GridLayoutPageDef"/>
+    <page path="/FormLayout.jsf" usageId="peddi_adftutorial_demo_view_FormLayoutPageDef"/>
+    <page path="/ShowDetail.jsf" usageId="peddi_adftutorial_demo_view_ShowDetailPageDef"/>
+    <page path="/PanelAccordionTabbed.jsf" usageId="peddi_adftutorial_demo_view_PanelAccordionTabbedPageDef"/>
+    <page path="/AllBeans.jsf" usageId="peddi_adftutorial_demo_view_AllBeansPageDef"/>
+    <page path="/PanelDashboard.jsf" usageId="peddi_adftutorial_demo_view_PanelDashboardPageDef"/>
+    <page path="/Table.jsf" usageId="peddi_adftutorial_demo_view_TablePageDef"/>
+    <page path="/Tree.jsf" usageId="peddi_adftutorial_demo_view_TreePageDef"/>
+    <page path="/Hierarchy.jsf" usageId="peddi_adftutorial_demo_view_HierarchyPageDef"/>
+    <page path="/Query2.jsf" usageId="peddi_adftutorial_demo_view_Query2PageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="peddi_adftutorial_demo_view_DeptEmpPagePageDef"
+          path="peddi.adftutorial.demo.view.pageDefs.DeptEmpPagePageDef"/>
+    <page id="peddi_adftutorial_demo_view_QueryPageDef" path="peddi.adftutorial.demo.view.pageDefs.QueryPageDef"/>
+    <page id="peddi_adftutorial_demo_view_searchEmailPageDef"
+          path="peddi.adftutorial.demo.view.pageDefs.searchEmailPageDef"/>
+    <page id="peddi_adftutorial_demo_view_TableTestPageDef"
+          path="peddi.adftutorial.demo.view.pageDefs.TableTestPageDef"/>
+    <page id="peddi_adftutorial_demo_view_DynamicFormPageDef"
+          path="peddi.adftutorial.demo.view.pageDefs.DynamicFormPageDef"/>
+    <page id="peddi_adftutorial_demo_view_LayoutTestPageDef"
+          path="peddi.adftutorial.demo.view.pageDefs.LayoutTestPageDef"/>
+    <page id="peddi_adftutorial_demo_view_SplitterPageDef" path="peddi.adftutorial.demo.view.pageDefs.SplitterPageDef"/>
+    <page id="peddi_adftutorial_demo_view_GridLayoutPageDef"
+          path="peddi.adftutorial.demo.view.pageDefs.GridLayoutPageDef"/>
+    <page id="peddi_adftutorial_demo_view_FormLayoutPageDef"
+          path="peddi.adftutorial.demo.view.pageDefs.FormLayoutPageDef"/>
+    <page id="peddi_adftutorial_demo_view_ShowDetailPageDef"
+          path="peddi.adftutorial.demo.view.pageDefs.ShowDetailPageDef"/>
+    <page id="peddi_adftutorial_demo_view_PanelAccordionTabbedPageDef"
+          path="peddi.adftutorial.demo.view.pageDefs.PanelAccordionTabbedPageDef"/>
+    <page id="peddi_adftutorial_demo_view_AllBeansPageDef" path="peddi.adftutorial.demo.view.pageDefs.AllBeansPageDef"/>
+    <page id="peddi_adftutorial_demo_view_PanelDashboardPageDef"
+          path="peddi.adftutorial.demo.view.pageDefs.PanelDashboardPageDef"/>
+    <page id="peddi_adftutorial_demo_view_TablePageDef" path="peddi.adftutorial.demo.view.pageDefs.TablePageDef"/>
+    <page id="peddi_adftutorial_demo_view_TreePageDef" path="peddi.adftutorial.demo.view.pageDefs.TreePageDef"/>
+    <page id="peddi_adftutorial_demo_view_HierarchyPageDef"
+          path="peddi.adftutorial.demo.view.pageDefs.HierarchyPageDef"/>
+    <page id="peddi_adftutorial_demo_view_Query2PageDef" path="peddi.adftutorial.demo.view.pageDefs.Query2PageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="AMServiceTest" path="peddi.adftutorial.demo.model.AMServiceTest"/>
+    <BC4JDataControl id="HRSystemAMDataControl" Package="peddi.adftutorial.demo.model.service"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="HRSystemAMLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

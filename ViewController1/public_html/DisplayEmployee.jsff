@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:pageTemplate viewId="/oracle/templates/threeColumnTemplate.jspx" id="pt1">
+        <f:facet name="center">
+            <af:table value="#{bindings.EmployeesVO3.collectionModel}" var="row"
+                      rows="#{bindings.EmployeesVO3.rangeSize}"
+                      emptyText="#{bindings.EmployeesVO3.viewable ? 'No data to display.' : 'Access Denied.'}"
+                      fetchSize="#{bindings.EmployeesVO3.rangeSize}" rowBandingInterval="0" id="t1">
+                <af:column sortProperty="#{bindings.EmployeesVO3.hints.EmployeeId.name}" sortable="false"
+                           headerText="#{bindings.EmployeesVO3.hints.EmployeeId.label}" id="c1">
+                    <af:outputText value="#{row.EmployeeId}"
+                                   shortDesc="#{bindings.EmployeesVO3.hints.EmployeeId.tooltip}" id="ot1">
+                        <af:convertNumber groupingUsed="false"
+                                          pattern="#{bindings.EmployeesVO3.hints.EmployeeId.format}"/>
+                    </af:outputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.EmployeesVO3.hints.FirstName.name}" sortable="false"
+                           headerText="#{bindings.EmployeesVO3.hints.FirstName.label}" id="c2">
+                    <af:outputText value="#{row.FirstName}" shortDesc="#{bindings.EmployeesVO3.hints.FirstName.tooltip}"
+                                   id="ot2"/>
+                </af:column>
+                <af:column sortProperty="#{bindings.EmployeesVO3.hints.LastName.name}" sortable="false"
+                           headerText="#{bindings.EmployeesVO3.hints.LastName.label}" id="c3">
+                    <af:outputText value="#{row.LastName}" shortDesc="#{bindings.EmployeesVO3.hints.LastName.tooltip}"
+                                   id="ot3"/>
+                </af:column>
+                <af:column sortProperty="#{bindings.EmployeesVO3.hints.Email.name}" sortable="false"
+                           headerText="#{bindings.EmployeesVO3.hints.Email.label}" id="c4">
+                    <af:outputText value="#{row.Email}" shortDesc="#{bindings.EmployeesVO3.hints.Email.tooltip}"
+                                   id="ot4"/>
+                </af:column>
+                <af:column sortProperty="#{bindings.EmployeesVO3.hints.PhoneNumber.name}" sortable="false"
+                           headerText="#{bindings.EmployeesVO3.hints.PhoneNumber.label}" id="c5">
+                    <af:outputText value="#{row.PhoneNumber}"
+                                   shortDesc="#{bindings.EmployeesVO3.hints.PhoneNumber.tooltip}" id="ot5"/>
+                </af:column>
+                <af:column sortProperty="#{bindings.EmployeesVO3.hints.HireDate.name}" sortable="false"
+                           headerText="#{bindings.EmployeesVO3.hints.HireDate.label}" id="c6">
+                    <af:outputText value="#{row.HireDate}" shortDesc="#{bindings.EmployeesVO3.hints.HireDate.tooltip}"
+                                   id="ot6">
+                        <af:convertDateTime pattern="#{bindings.EmployeesVO3.hints.HireDate.format}"/>
+                    </af:outputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.EmployeesVO3.hints.JobId.name}" sortable="false"
+                           headerText="#{bindings.EmployeesVO3.hints.JobId.label}" id="c7">
+                    <af:outputText value="#{row.JobId}" shortDesc="#{bindings.EmployeesVO3.hints.JobId.tooltip}"
+                                   id="ot7"/>
+                </af:column>
+                <af:column sortProperty="#{bindings.EmployeesVO3.hints.Salary.name}" sortable="false"
+                           headerText="#{bindings.EmployeesVO3.hints.Salary.label}" id="c8">
+                    <af:outputText value="#{row.Salary}" shortDesc="#{bindings.EmployeesVO3.hints.Salary.tooltip}"
+                                   id="ot8"/>
+                </af:column>
+                <af:column sortProperty="#{bindings.EmployeesVO3.hints.CommissionPct.name}" sortable="false"
+                           headerText="#{bindings.EmployeesVO3.hints.CommissionPct.label}" id="c9">
+                    <af:outputText value="#{row.CommissionPct}"
+                                   shortDesc="#{bindings.EmployeesVO3.hints.CommissionPct.tooltip}" id="ot9"/>
+                </af:column>
+                <af:column sortProperty="#{bindings.EmployeesVO3.hints.ManagerId.name}" sortable="false"
+                           headerText="#{bindings.EmployeesVO3.hints.ManagerId.label}" id="c10">
+                    <af:outputText value="#{row.ManagerId}" shortDesc="#{bindings.EmployeesVO3.hints.ManagerId.tooltip}"
+                                   id="ot10">
+                        <af:convertNumber groupingUsed="false"
+                                          pattern="#{bindings.EmployeesVO3.hints.ManagerId.format}"/>
+                    </af:outputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.EmployeesVO3.hints.DepartmentId.name}" sortable="false"
+                           headerText="#{bindings.EmployeesVO3.hints.DepartmentId.label}" id="c11">
+                    <af:outputText value="#{row.DepartmentId}"
+                                   shortDesc="#{bindings.EmployeesVO3.hints.DepartmentId.tooltip}" id="ot11">
+                        <af:convertNumber groupingUsed="false"
+                                          pattern="#{bindings.EmployeesVO3.hints.DepartmentId.format}"/>
+                    </af:outputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.EmployeesVO3.hints.FullName.name}" sortable="false"
+                           headerText="#{bindings.EmployeesVO3.hints.FullName.label}" id="c12">
+                    <af:outputText value="#{row.FullName}" shortDesc="#{bindings.EmployeesVO3.hints.FullName.tooltip}"
+                                   id="ot12"/>
+                </af:column>
+            </af:table>
+        </f:facet>
+        <f:facet name="header"/>
+        <f:facet name="end"/>
+        <f:facet name="start"/>
+        <f:facet name="branding"/>
+        <f:facet name="copyright"/>
+        <f:facet name="status"/>
+    </af:pageTemplate>
+</ui:composition>

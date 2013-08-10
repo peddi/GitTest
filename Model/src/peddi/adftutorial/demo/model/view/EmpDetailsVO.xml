@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EmpDetailsVO"
+  Version="11.1.2.64.36"
+  SelectList="EmployeesEO.EMPLOYEE_ID, 
+       EmployeesEO.FIRST_NAME, 
+       EmployeesEO.LAST_NAME, 
+       EmployeesEO.EMAIL, 
+       EmployeesEO.HIRE_DATE, 
+       EmployeesEO.SALARY, 
+       EmployeesEO.JOB_ID, 
+       DepartmentsEO.DEPARTMENT_ID, 
+       DepartmentsEO.DEPARTMENT_NAME"
+  FromList="EMPLOYEES EmployeesEO, DEPARTMENTS DepartmentsEO"
+  Where="EmployeesEO.DEPARTMENT_ID = DepartmentsEO.DEPARTMENT_ID"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false"
+  FetchMode="FETCH_AS_NEEDED">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="peddi.adftutorial.demo.model.view.EmpDetailsVO_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewAccessor
+    Name="JobsVO1"
+    ViewObjectName="peddi.adftutorial.demo.model.view.JobsVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_JobId"
+    ListVOName="JobsVO1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0"
+    ComboRowCountHint="10">
+    <AttrArray Name="AttrNames">
+      <Item Value="JobId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="JobId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="JobTitle"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="EmployeesEO"
+    Entity="peddi.adftutorial.demo.model.entity.EmployeesEO"/>
+  <EntityUsage
+    Name="DepartmentsEO"
+    Entity="peddi.adftutorial.demo.model.entity.DepartmentsEO"
+    Association="peddi.adftutorial.demo.model.entity.EmpDeptFkAssoc"
+    AssociationEnd="peddi.adftutorial.demo.model.entity.EmpDeptFkAssoc.DepartmentsEO"
+    SourceUsage="peddi.adftutorial.demo.model.view.EmpDetailsVO.EmployeesEO"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="INNER JOIN">
+    <DesignTime>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="peddi.adftutorial.demo.model.entity.EmployeesEO.DepartmentId"/>
+      </AttrArray>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="peddi.adftutorial.demo.model.entity.DepartmentsEO.DepartmentId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <ViewAttribute
+    Name="EmployeeId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="EmployeeId"
+    EntityUsage="EmployeesEO"
+    AliasName="EMPLOYEE_ID"/>
+  <ViewAttribute
+    Name="FirstName"
+    PrecisionRule="true"
+    EntityAttrName="FirstName"
+    EntityUsage="EmployeesEO"
+    AliasName="FIRST_NAME">
+    <Properties>
+      <SchemaBasedProperties>
+        <CATEGORY
+          Value="Name"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="LastName"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="LastName"
+    EntityUsage="EmployeesEO"
+    AliasName="LAST_NAME">
+    <Properties>
+      <SchemaBasedProperties>
+        <CATEGORY
+          Value="Name"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Email"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Email"
+    EntityUsage="EmployeesEO"
+    AliasName="EMAIL">
+    <Properties>
+      <SchemaBasedProperties>
+        <CATEGORY
+          Value="Name"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="HireDate"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="HireDate"
+    EntityUsage="EmployeesEO"
+    AliasName="HIRE_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <CATEGORY
+          Value="Name"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Salary"
+    PrecisionRule="true"
+    EntityAttrName="Salary"
+    EntityUsage="EmployeesEO"
+    AliasName="SALARY"/>
+  <ViewAttribute
+    Name="JobId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="JobId"
+    EntityUsage="EmployeesEO"
+    AliasName="JOB_ID"
+    LOVName="LOV_JobId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="DepartmentId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="DepartmentId"
+    EntityUsage="DepartmentsEO"
+    AliasName="DEPARTMENT_ID"/>
+  <ViewAttribute
+    Name="DepartmentName"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="DepartmentName"
+    EntityUsage="DepartmentsEO"
+    AliasName="DEPARTMENT_NAME"/>
+  <ViewAttribute
+    Name="AnnualSalary"
+    IsUpdateable="false"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="VIEW_ATTR"
+    SQLType="NUMERIC">
+    <RecalcCondition><![CDATA[true]]></RecalcCondition>
+    <TransientExpression><![CDATA[if (Salary == null){
+0;}
+else{
+12*Salary;
+}]]></TransientExpression>
+    <Dependencies>
+      <Item
+        Value="Salary"/>
+    </Dependencies>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="FullName"
+    IsUpdateable="false"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="FullName"
+    EntityUsage="EmployeesEO"
+    AliasName="FULL_NAME"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="EmployeeId"/>
+  </AttrArray>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="peddi.adftutorial.demo.model.ModelBundle"/>
+  </ResourceBundle>
+  <Category
+    Name="Name"/>
+</ViewObject>

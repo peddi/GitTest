@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-call id="task-flow-definition1">
+    <task-flow-reference>
+      <document>/WEB-INF/task-flow-definition1.xml</document>
+      <id>task-flow-definition1</id>
+    </task-flow-reference>
+  </task-flow-call>
+  <managed-bean id="__5">
+    <managed-bean-name>PanelDashBoardBean</managed-bean-name>
+    <managed-bean-class>peddi.adftutorial.demo.view.PanelDashBoardHandler</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__1">
+    <managed-bean-name>PopulatePopup</managed-bean-name>
+    <managed-bean-class>peddi.adftutorial.demo.view.PopulatePopup</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

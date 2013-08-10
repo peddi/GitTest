@@ -1,0 +1,11 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="peddi.adftutorial.demo.model.service.HRSystemAM">
+      <AppModuleConfig name="13FB8EDEF54" DBconnection="java:comp/env/jdbc/XE_HRDS" ApplicationName="peddi.adftutorial.demo.model.service.HRSystemAM" DeployPlatform="LOCAL" IsLazyLoadingTrue="true" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory" JDBCName="XE_HR" BC4JConfigName="HRSystemAMLocal" jbo.project="peddi.adftutorial.demo.model.Model">
+         <Database jbo.locking.mode="optimistic" jbo.TypeMapEntries="OracleApps" jbo.SQLBuilder="Oracle"/>
+         <Security AppModuleJndiName="peddi.adftutorial.demo.model.service.HRSystemAM"/>
+         <Tester FullProxyInterfaceName="peddi.adftutorial.demo.model.service.common.HRSystemAM"/>
+         <Custom LastUsedConfiguration="HRSystemAMLocal" JDBCDataSource="java:comp/env/jdbc/XE_HRDS"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

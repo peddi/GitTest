@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="HierarchyPageDef"
+                Package="peddi.adftutorial.demo.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="DepartmentsVO1" RangeSize="25" DataControl="HRSystemAMDataControl" id="DepartmentsVO1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="DepartmentsVO1Iterator" id="DepartmentsVO1">
+      <nodeDefinition DefName="peddi.adftutorial.demo.model.view.DepartmentsVO" Name="DepartmentsVO10">
+        <AttrNames>
+          <Item Value="LocationId"/>
+          <Item Value="ManagerId"/>
+          <Item Value="DepartmentId"/>
+          <Item Value="DepartmentName"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="EmployeesVO"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="peddi.adftutorial.demo.model.view.EmployeesVO" Name="DepartmentsVO11">
+        <AttrNames>
+          <Item Value="Email"/>
+          <Item Value="FullName"/>
+          <Item Value="HireDate"/>
+          <Item Value="Salary"/>
+          <Item Value="FirstName"/>
+          <Item Value="PhoneNumber"/>
+          <Item Value="LastName"/>
+          <Item Value="EmployeeId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="11.1.2.64.36" id="DataBindings"
+             SeparateXMLFiles="false" Package="peddi.adftutorial.demo.view" ClientType="Generic">
+  <pageMap>
+    <page path="/untitled1.jsf" usageId="peddi_adftutorial_demo_view_untitled1PageDef"/>
+    <page path="/untitled2.jsf" usageId="peddi_adftutorial_demo_view_untitled2PageDef"/>
+    <page path="/PrgViewCriteria.jsf" usageId="peddi_adftutorial_demo_view_PrgViewCriteriaPageDef"/>
+    <page path="/CriteriaTab.jsf" usageId="peddi_adftutorial_demo_view_CriteriaTabPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="peddi_adftutorial_demo_view_untitled1PageDef"
+          path="peddi.adftutorial.demo.view.pageDefs.untitled1PageDef"/>
+    <page id="peddi_adftutorial_demo_view_untitled2PageDef"
+          path="peddi.adftutorial.demo.view.pageDefs.untitled2PageDef"/>
+    <page id="peddi_adftutorial_demo_view_PrgViewCriteriaPageDef"
+          path="peddi.adftutorial.demo.view.pageDefs.PrgViewCriteriaPageDef"/>
+    <page id="peddi_adftutorial_demo_view_CriteriaTabPageDef"
+          path="peddi.adftutorial.demo.view.pageDefs.CriteriaTabPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="HRSystemAMDataControl" Package="peddi.adftutorial.demo.model.service"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="HRSystemAMLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="PageVariablesPageDef"
+                Package="peddi.adftutorial.taskflow.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variable Name="toggleDisplayDemoPanel" Type="java.lang.Boolean"/>
+      <variable Name="selectedColorId" Type="java.lang.Number"/>
+    </variableIterator>
+    <iterator Binds="EmployeesVO1" RangeSize="25" DataControl="HRSystemAMDataControl" id="EmployeesVO1Iterator"/>
+    <searchRegion Binds="EmployeesVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="EmployeesVO1Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="variables" id="toggleDisplayDemoPanel1">
+      <AttrNames>
+        <Item Value="toggleDisplayDemoPanel"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="EmployeesVO1Iterator" id="EmployeesVO1">
+      <nodeDefinition DefName="peddi.adftutorial.demo.model.view.EmployeesVO" Name="EmployeesVO10">
+        <AttrNames>
+          <Item Value="EmployeeId"/>
+          <Item Value="FirstName"/>
+          <Item Value="LastName"/>
+          <Item Value="Email"/>
+          <Item Value="PhoneNumber"/>
+          <Item Value="HireDate"/>
+          <Item Value="JobId"/>
+          <Item Value="Salary"/>
+          <Item Value="CommissionPct"/>
+          <Item Value="ManagerId"/>
+          <Item Value="DepartmentId"/>
+          <Item Value="FullName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="variables" id="selectedColorId1">
+      <AttrNames>
+        <Item Value="selectedColorId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeesVO1Iterator" id="EmployeeId">
+      <AttrNames>
+        <Item Value="EmployeeId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeesVO1Iterator" id="FirstName">
+      <AttrNames>
+        <Item Value="FirstName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeesVO1Iterator" id="LastName">
+      <AttrNames>
+        <Item Value="LastName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeesVO1Iterator" id="Email">
+      <AttrNames>
+        <Item Value="Email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeesVO1Iterator" id="PhoneNumber">
+      <AttrNames>
+        <Item Value="PhoneNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeesVO1Iterator" id="HireDate">
+      <AttrNames>
+        <Item Value="HireDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeesVO1Iterator" id="JobId">
+      <AttrNames>
+        <Item Value="JobId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeesVO1Iterator" id="Salary">
+      <AttrNames>
+        <Item Value="Salary"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeesVO1Iterator" id="CommissionPct">
+      <AttrNames>
+        <Item Value="CommissionPct"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeesVO1Iterator" id="ManagerId">
+      <AttrNames>
+        <Item Value="ManagerId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeesVO1Iterator" id="DepartmentId">
+      <AttrNames>
+        <Item Value="DepartmentId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeesVO1Iterator" id="FullName">
+      <AttrNames>
+        <Item Value="FullName"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

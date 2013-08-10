@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="Popup.jsf" id="d1">
+        <af:form id="f1">
+            <af:panelStretchLayout id="psl1">
+                <f:facet name="bottom"/>
+                <f:facet name="center">
+                    <af:panelDashboard id="pd1" columns="2">
+                        <af:panelBox text="Dialog Popup" id="pb1">
+                            <f:facet name="toolbar"/>
+                            <af:popup childCreation="deferred" autoCancel="disabled" id="dialogPopup">
+                                <af:dialog id="d2" type="yesNo" title="My Popup" modal="true" closeIconVisible="false"
+                                           resize="on" stretchChildren="first">
+                                    <af:panelTabbed id="pt2" inlineStyle="width:323px;">
+                                        <af:showDetailItem text="showDetailItem 1" id="sdi3">
+                                            <af:panelGroupLayout id="pgl2">
+                                                <af:outputText value="My First Popup" id="ot30"/>
+                                            </af:panelGroupLayout>
+                                        </af:showDetailItem>
+                                        <af:showDetailItem text="showDetailItem 2" id="sdi4">
+                                            <af:panelFormLayout id="pfl4">
+                                                <f:facet name="footer"/>
+                                                <af:outputText value="My First Popup" id="ot31"/>
+                                            </af:panelFormLayout>
+                                        </af:showDetailItem>
+                                    </af:panelTabbed>
+                                    <f:facet name="buttonBar">
+                                        <af:group id="g1">
+                                            <af:commandButton text="commandButton 2" id="cb2" partialSubmit="true"/>
+                                            <af:commandButton text="commandButton 3" id="cb3" partialSubmit="true"/>
+                                        </af:group>
+                                    </f:facet>
+                                </af:dialog>
+                            </af:popup>
+                            <af:commandButton text="Dialog Popup" id="cb1">
+                                <af:showPopupBehavior popupId="dialogPopup"/>
+                            </af:commandButton>
+                        </af:panelBox>
+                        <af:panelBox text="PanelBox2" id="pb2">
+                            <f:facet name="toolbar"/>
+                            <af:popup childCreation="deferred" autoCancel="disabled" id="panelWindowPopup">
+                                <af:panelWindow id="pw1" resize="on">
+                                    <af:panelGroupLayout id="pgl1">
+                                        <af:outputText value="Whats up man" id="ot1"/>
+                                    </af:panelGroupLayout>
+                                </af:panelWindow>
+                            </af:popup>
+                            <af:commandButton text="commandButton 4" id="cb4">
+                                <af:showPopupBehavior popupId="panelWindowPopup"/>
+                            </af:commandButton>
+                        </af:panelBox>
+                        <af:panelBox text="PanelBox3" id="pb3">
+                            <f:facet name="toolbar"/>
+                            <af:popup childCreation="deferred" autoCancel="disabled" id="contextMenuPopup">
+                                <af:menu text="menu 1" id="m1"
+                                         icon="/WEB-INF/temp/bi/g13716775565345118462053937850867.png">
+                                    <af:commandMenuItem text="Menu Item1" id="cmi1" selectedText="Menu Item1"/>
+                                    <af:commandMenuItem text="Menu Item2" id="cmi2" selectedText="Menu Item2"/>
+                                </af:menu>
+                            </af:popup>
+                            <af:showPopupBehavior popupId="contextMenuPopup" triggerType="click"/>
+                        </af:panelBox>
+                        <af:panelBox text="PanelBox4" id="pb4">
+                            <f:facet name="toolbar"/>
+                            <af:popup childCreation="deferred" autoCancel="disabled" id="noteWindowPopup">
+                                <af:noteWindow id="nw1" inlineStyle="width:200px"><p>This is noteWindow popup to display some readonly data in the popup</p>
+                                </af:noteWindow>
+                            </af:popup>
+                            <af:showPopupBehavior popupId="noteWindowPopup" triggerType="mouseHover"/>
+                        </af:panelBox>
+                    </af:panelDashboard>
+                </f:facet>
+                <f:facet name="start"/>
+                <f:facet name="end"/>
+                <f:facet name="top"/>
+            </af:panelStretchLayout>
+        </af:form>
+    </af:document>
+</f:view>

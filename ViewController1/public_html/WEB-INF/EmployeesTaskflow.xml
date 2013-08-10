@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="EmployeesTaskflow">
+    <default-activity>methodCall1</default-activity>
+    <method-call id="methodCall1">
+      <method>#{bindings.Execute.execute}</method>
+      <outcome>
+        <fixed-outcome>Execute</fixed-outcome>
+      </outcome>
+    </method-call>
+    <view id="DisplayEmployee">
+      <page>/DisplayEmployee.jsff</page>
+    </view>
+    <control-flow-rule id="__3">
+      <from-activity-id>methodCall1</from-activity-id>
+      <control-flow-case id="__4">
+        <to-activity-id>DisplayEmployee</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

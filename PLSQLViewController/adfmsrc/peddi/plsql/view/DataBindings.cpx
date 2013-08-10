@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="11.1.2.64.36" id="DataBindings"
+             SeparateXMLFiles="false" Package="peddi.plsql.view" ClientType="Generic">
+  <pageMap>
+    <page path="/PLSQLCall.jsf" usageId="peddi_plsql_view_PLSQLCallPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="peddi_plsql_view_PLSQLCallPageDef" path="peddi.plsql.view.pageDefs.PLSQLCallPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="PLSQLAppModuleDataControl" Package="peddi.plsql.model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="PLSQLAppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

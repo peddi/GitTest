@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="PLSQLAppModule"
+  Version="11.1.2.64.36"
+  ClearCacheOnRollback="true">
+  <ViewUsage
+    Name="PeddiPLSQLEmployeesVO1"
+    ViewObjectName="peddi.plsql.model.PeddiPLSQLEmployeesVO"/>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="peddi.plsql.model.PLSQLAppModule_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="peddi.plsql.model.PLSQLModelBundle"/>
+  </ResourceBundle>
+</AppModule>
